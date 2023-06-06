@@ -1,0 +1,7 @@
+playGame()
+    > score = 0
+    > Play round
+        > Generate computer choice 
+        > Compare against player choice 
+        > Return winner  
+    > winner = score + 1

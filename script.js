@@ -1,3 +1,4 @@
+/*Function Declarations*/
 function getComputerChoice()
 {
     randomInteger=Math.round(Math.random()*(3-1)+1);
@@ -76,9 +77,12 @@ function game(rounds)
         console.log(`Player: ${playerScore} | Computer: ${computerScore}`)
     }
 }
+/*Script Section */
+
 let playerScore = 0;
 let computerScore = 0;
-rounds = prompt("How many rounds? ");
+let rounds = 5;
+
 game(rounds);
 if (playerScore > computerScore)
 {

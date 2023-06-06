@@ -1,0 +1,2 @@
+# The Odin Project - Project: Rock, Paper, Scissors
+This is my entry to The Odin Project's **Rock, Paper, Scissors** JavaScript project. As of 06-06-23, this code is pretty bare bones and played exclusively through JS prompts. Code is a little messy and could use some optimization as there's a bit of redundancy with the conditions. Will optimize this in the near future.

@@ -83,7 +83,7 @@ let playerScore = 0;
 let computerScore = 0;
 let rounds = 5;
 
-game(rounds);
+//game(rounds);
 if (playerScore > computerScore)
 {
     console.log("======\nYou win.\n======");
@@ -105,3 +105,27 @@ playRound(playerSelection, computerSelection);
 
 
 //This is a test comment.
+const body = document.querySelector('body');
+const content = document.createElement('div');
+const h1 = document.createElement('h1');
+const flavorText = document.createElement('p');
+const buttonRow = document.createElement('div');
+const rock = document.createElement('div');
+const paper = document.createElement('div'); 
+const scissors = document.createElement('div'); 
+
+
+h1.textContent = ("Rock, Paper, Scissors");
+flavorText.textContent = ("Some simple flavor text. Let's play!");
+rock.textContent = ("rock");
+buttonRow.classList.add('buttonRow');
+rock.classList.add('rpsButton');
+paper.classList.add('rpsButton');
+scissors.classList.add('rpsButton');
+
+body.appendChild(content);
+content.appendChild(h1);
+content.appendChild(flavorText);
+content.appendChild(buttonRow);
+buttonRow.appendChild(rock);
+buttonRow.append 

@@ -9,7 +9,7 @@ function getComputerChoice()
         case 2:
             return ("paper");
         case 3:
-            return("scissors");
+            return("scissors");Paper
     }
 }
 function updateScore()
@@ -32,7 +32,9 @@ function playRound(playerSelection)
     updateScore();
     console.log('test')
     const computerSelection = getComputerChoice();
-    
+    computerChoiceDisplay.textContent = (`The computer chose ${computerSelection}.`);
+
+
     console.log(`Player chose ${playerSelection}, computer chose ${computerSelection}`)
     if (playerSelection === computerSelection)
     {
@@ -130,3 +132,6 @@ const computerScoreDisplay = document.createElement('score');
 computerScoreDisplay.textContent = computerScore;
 computerScoreContainer.appendChild(computerScoreDisplay);
 
+const computerChoiceDisplay = document.createElement('span');
+const computerChoice = document.querySelector('#computerChoice');
+computerChoice.appendChild(computerChoiceDisplay);

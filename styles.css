@@ -3,9 +3,19 @@ body{
     color:white;
     background-color: black;
 }
-h1{
-    font-size:56px;
+#buttons{
+    display:flex;
+    justify-content: space-evenly;
 }
-.buttonRow{
-    background-color: grey;
+
+.rpsButton{
+    background-color: transparent;
+    border-color: white;
+    border-radius:15px;
+    border-style: solid;
+    border-width:2px;
+    padding:20px;
+    text-align:center;
+    color: white;
+    flex-basis:100px;
 }

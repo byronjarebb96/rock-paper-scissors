@@ -12,9 +12,24 @@ function getComputerChoice()
             return("scissors");
     }
 }
+function updateScore()
+{
+    if (playerScore == 5)
+    {
+        alert('You win!');
+    }
+    else if (computerScore == 5)
+    {
+        alert('You lose!');
+    }
+    computerScoreDisplay.textContent = computerScore;
+    playerScoreDisplay.textContent = playerScore;
+    if (playerScore == 5 || computerScore == 5) {playerScore = computerScore = 0}
 
+}
 function playRound(playerSelection)
 {   
+    updateScore();
     console.log('test')
     const computerSelection = getComputerChoice();
     
@@ -104,3 +119,14 @@ const scissors = document.querySelector('#scissors');
 rock.addEventListener('click', () => {playRound('rock')});
 paper.addEventListener('click', () => {playRound('paper')});
 scissors.addEventListener('click', () => {playRound('scissors')});
+
+const scoreboard = document.querySelector('#scoreboard');
+const playerScoreContainer = document.querySelector('#playerScoreContainer');
+const playerScoreDisplay = document.createElement('score');
+playerScoreDisplay.textContent = playerScore;
+playerScoreContainer.appendChild(playerScoreDisplay);
+const computerScoreContainer = document.querySelector('#computerScoreContainer');
+const computerScoreDisplay = document.createElement('score');
+computerScoreDisplay.textContent = computerScore;
+computerScoreContainer.appendChild(computerScoreDisplay);
+

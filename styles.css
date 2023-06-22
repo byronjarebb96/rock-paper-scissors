@@ -7,7 +7,9 @@ body{
     display:flex;
     justify-content: space-evenly;
 }
-
+score{
+    font-size: 56px;
+}
 .rpsButton{
     background-color: transparent;
     border-color: white;
@@ -18,4 +20,16 @@ body{
     text-align:center;
     color: white;
     flex-basis:100px;
+}
+
+#scoreboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.scoreContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

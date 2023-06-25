@@ -24,21 +24,20 @@ function updateScore()
     }
     computerScoreDisplay.textContent = computerScore;
     playerScoreDisplay.textContent = playerScore;
-    if (playerScore == 5 || computerScore == 5) {playerScore = computerScore = 0}
+    if (playerScore == 5 || computerScore == 5) {playerScore = computerScore = round =0}
 
 }
 function playRound(playerSelection)
 {   
     updateScore();
-    console.log('test')
     const computerSelection = getComputerChoice();
-    computerChoiceDisplay.textContent = (`The computer chose ${computerSelection}.`);
-
-
-    console.log(`Player chose ${playerSelection}, computer chose ${computerSelection}`)
+    computerChoiceDisplay.textContent = (`Round ${round}: The computer chose ${computerSelection}.`);
+    round+=1;
+    roundResult.textContent="";
     if (playerSelection === computerSelection)
     {
-        console.log("It's a tie!");
+        roundResult.textContent = "It's a tie!";
+        return;
     }
 
     else if (playerSelection == 'rock')
@@ -84,12 +83,14 @@ function playRound(playerSelection)
     {
         console.log("Invalid selection. Try again.");
     }
+    
 }
 
 /*Script Section */
 
 let playerScore = 0;
 let computerScore = 0;
+let round = 1;
 
 //game(rounds);
 /*
@@ -122,6 +123,7 @@ rock.addEventListener('click', () => {playRound('rock')});
 paper.addEventListener('click', () => {playRound('paper')});
 scissors.addEventListener('click', () => {playRound('scissors')});
 
+
 const scoreboard = document.querySelector('#scoreboard');
 const playerScoreContainer = document.querySelector('#playerScoreContainer');
 const playerScoreDisplay = document.createElement('score');
@@ -129,9 +131,12 @@ playerScoreDisplay.textContent = playerScore;
 playerScoreContainer.appendChild(playerScoreDisplay);
 const computerScoreContainer = document.querySelector('#computerScoreContainer');
 const computerScoreDisplay = document.createElement('score');
+const rpsButtons = Array.from(document.querySelectorAll('.rpsButton'));
 computerScoreDisplay.textContent = computerScore;
 computerScoreContainer.appendChild(computerScoreDisplay);
 
 const computerChoiceDisplay = document.createElement('span');
+const roundResult = document.createElement('p');
 const computerChoice = document.querySelector('#computerChoice');
 computerChoice.appendChild(computerChoiceDisplay);
+computerChoice.appendChild(roundResult);
